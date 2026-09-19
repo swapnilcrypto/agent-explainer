@@ -6,7 +6,14 @@ Release candidate: **0.1.0-beta.1**. Evidence recorded on **2026-09-19**.
 
 The repository owner is now `swapupg`. The public demo is [Agent Explainer](https://swapupg.github.io/agent-explainer/) and the source repository is [swapupg/agent-explainer](https://github.com/swapupg/agent-explainer).
 
-Application links, feedback URLs, sharing metadata, launch documentation, the repository homepage, the local Git remote, and the public smoke check now use the new account name. Scenario revisions and simulation behavior are unchanged. Verification of the migrated deployment is pending.
+Application links, feedback URLs, sharing metadata, launch documentation, the repository homepage, the local Git remote, and the public smoke check now use the new account name. Scenario revisions and simulation behavior are unchanged.
+
+- Deployed application commit: [`2aa45a9`](https://github.com/swapupg/agent-explainer/commit/2aa45a9f46ba5c538a26de4605ac66642aaba8d0). [Passing verification and Pages deployment](https://github.com/swapupg/agent-explainer/actions/runs/35477044064).
+- Type checking, lint, 35 unit/interface tests, all six scenario variants, the production build, and the 250 KB bundle budget pass. Dependency auditing reports zero vulnerabilities at verification time. JavaScript remains 84.8 KiB gzip.
+- All **72 browser checks pass in CI and against the new public address**, including direct shared links, refresh, repair/replay, and feedback navigation: `PLAYWRIGHT_BASE_URL=https://swapupg.github.io/agent-explainer/ npx playwright test`.
+- Public HTML, JavaScript, CSS, favicon, and social image return HTTP 200. The deployed `index-BPAkJ0RX.js` and HTML metadata contain the new owner and no old-owner links. The stylesheet remains `index-BPob4gkD.css`.
+- Current immutable archive: `agent-explainer-v0.1.0-beta.1-2aa45a9.tar.gz`, downloaded from the passing Pages artifact. SHA-256: `a4366564d3489fffbc1c224209525802708d32313358e64a03dad1fa8c1d06ff`.
+- The maintainer-only draft release targets the passing application commit above, with older archives retained. Human comprehension, physical-device and screen-reader user testing, signed-in GitHub feedback submission, and public rollback remain unverified. The tagged release remains unpublished.
 
 The evidence below is historical. Earlier public browser runs used the former Pages hostname shown in their commands; repository links have been updated to the current owner. Archives from before the rename retain the old links and need the same link migration before use as a rollback build under the new account.
 

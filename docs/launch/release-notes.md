@@ -17,7 +17,7 @@ See how AI agents work—and why they fail. Run a small experiment, inspect the 
 
 ## Verification
 
-Commit `c0be8bfe95cd6fdd233563a3e757ddf0497180c8` passed type checking, lint, 35 unit/interface tests, six validated scenario variants, 72 browser tests, dependency auditing, and the production build in [GitHub Actions](https://github.com/swapupg/agent-explainer/actions/runs/35475457810). The same 72 browser tests also passed against the live GitHub Pages URL. Browser projects cover Chromium, Firefox, WebKit, and mobile Chromium emulation. JavaScript is 84.8 KiB gzip against a 250 KB budget.
+Commit `2aa45a9f46ba5c538a26de4605ac66642aaba8d0` passed type checking, lint, 35 unit/interface tests, six validated scenario variants, 72 browser tests, dependency auditing, and the production build in [GitHub Actions](https://github.com/swapupg/agent-explainer/actions/runs/35477044064). The same 72 browser tests also passed against the live GitHub Pages URL under the renamed `swapupg` account. App, feedback, documentation, and sharing links use the new owner. Browser projects cover Chromium, Firefox, WebKit, and mobile Chromium emulation. JavaScript is 84.8 KiB gzip against a 250 KB budget.
 
 The outcome comparison now stacks on narrow screens. A regression check covers longer labels and wider fallback fonts at 320px. Feedback-link generation and opening are tested; the signed-in GitHub form and issue submission remain unverified.
 
@@ -29,4 +29,4 @@ This release is prepared as a **draft**. Do not publish the tag until at least e
 
 These demonstrations are teaching simulations, not model benchmarks or a view into a real model’s reasoning. Continuous batching is planned for the next release.
 
-The current compiled application is attached as `agent-explainer-v0.1.0-beta.1-c0be8bf.tar.gz`. Its SHA-256 is `5825008d70fdce7610a48263232dc91705d6f482b229889b9710c835d45f5852`. Earlier archives are retained for rollback; `BUILD-NOTES.txt` identifies each commit. Verify the archive against `SHA256SUMS.txt` before use. Public rollback has not been exercised.
+The current compiled application is attached as `agent-explainer-v0.1.0-beta.1-2aa45a9.tar.gz`. Its SHA-256 is `a4366564d3489fffbc1c224209525802708d32313358e64a03dad1fa8c1d06ff`. Earlier archives are retained; `BUILD-NOTES.txt` identifies each commit. Archives from before the account rename contain old URLs and need the same link migration before use as a rollback build under the new account. Verify the archive against `SHA256SUMS.txt` before use. Public rollback has not been exercised.
