@@ -27,7 +27,7 @@ for (const scenario of cases) {
   test(`${scenario.id}: inspect, repair, compare, share, refresh, and restart`, async ({
     page,
   }) => {
-    await page.goto(`./#/experiment/${scenario.id}/1/baseline/0`)
+    await page.goto(`./?unrelated=discard-me#/experiment/${scenario.id}/1/baseline/0`)
     await expect(
       page.getByRole('heading', { name: scenario.title, exact: true }).first(),
     ).toBeVisible()
@@ -47,6 +47,7 @@ for (const scenario of cases) {
     await expect(page.locator('.comparison')).toBeVisible()
     await page.getByRole('button', { name: 'Share experiment' }).click()
     const url = await page.getByLabel('Experiment link').inputValue()
+    expect(new URL(url).search).toBe('')
     await page.keyboard.press('Escape')
     await page.goto(url)
     await expect(page.locator('#outcome-title')).toHaveText(scenario.repair)

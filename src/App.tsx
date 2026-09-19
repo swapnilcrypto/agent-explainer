@@ -72,7 +72,7 @@ export default function App() {
   const frame = result.frames[route.step]
   const finished = route.step === result.frames.length - 1
   const repaired = route.variant === 'repaired'
-  const shareURL = `${window.location.href.split('#')[0]}${encodeRoute(route)}`
+  const shareURL = `${window.location.origin}${window.location.pathname}${encodeRoute(route)}`
   const progress = Math.round((route.step / (result.frames.length - 1)) * 100)
 
   useEffect(() => {

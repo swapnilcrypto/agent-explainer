@@ -10,7 +10,7 @@ Release candidate: **0.1.0-beta.1**. Evidence recorded on **2026-09-19**.
 | Unit and interface tests      | 30 tests pass across three test files.                                                                                                                                                                                            |
 | Scenario contract validation  | All six revision-1 variants pass: deterministic snapshots, bounded traces, teaching metadata, valid glossary references, expected failures and repairs.                                                                           |
 | Browser journeys              | 44 tests pass on Chromium, Firefox, WebKit, and a narrow mobile Chromium viewport.                                                                                                                                                |
-| Route and resilience coverage | Exact shared states, refresh, back/forward, invalid links, repeated controls, scenario switching, unavailable storage, and denied clipboard access pass.                                                                          |
+| Route and resilience coverage | Exact shared states, refresh, back/forward, invalid links, repeated controls, scenario switching, unavailable storage, and denied clipboard access pass. Shared links discard unrelated query parameters.                         |
 | Accessibility automation      | Axe checks pass in light/dark themes with reduced motion. Keyboard dialog behavior, focus restoration, and step navigation pass. Additional Chromium checks found no violations for each repaired outcome or the concepts dialog. |
 | Responsive review             | Desktop, dark theme, and 390px mobile screenshots reviewed; 320px viewport has no horizontal overflow. This is browser emulation, not physical-device testing.                                                                    |
 | Production build              | Relative assets and hash routes work at the `/agent-explainer/` preview subpath.                                                                                                                                                  |
@@ -23,7 +23,7 @@ Contrast testing initially found secondary labels that were too faint. Their col
 
 ## Release checks
 
-- Clean-checkout installation: pending final verification.
+- Clean-checkout installation: passed from a fresh local Git clone. `npm ci`, `npm run check`, and the README development server were exercised; a browser loaded the app and advanced the first experiment.
 - GitHub Actions and public Pages deployment: pending.
 - Public URL, assets, and direct shared links: pending.
 - Versioned archive and checksum: pending.
