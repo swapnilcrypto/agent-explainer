@@ -1,6 +1,24 @@
-import { scenarioRevisions } from '../src/scenarios'
+import { scenarioRevisions, getScenario } from '../src/scenarios'
 import { runScenario } from '../src/simulation/engine'
 import { glossary } from '../src/lib/glossary'
+
+import { lessonQuestions } from '../src/learning/questions'
+
+for (const [identity, questions] of Object.entries(lessonQuestions)) {
+  const [id, revision] = identity.split('@')
+  if (!getScenario(id, Number(revision))) throw new Error(`Unknown lesson revision: ${identity}`)
+  for (const question of [questions.prediction, questions.reflection]) {
+    const ids = question.options.map((option) => option.id)
+    if (
+      !question.prompt ||
+      ids.length < 2 ||
+      new Set(ids).size !== ids.length ||
+      !ids.includes(question.correctOption) ||
+      question.options.some((option) => !option.label || !option.explanation)
+    )
+      throw new Error(`Invalid learning question: ${identity}`)
+  }
+}
 
 const identities = new Set<string>()
 for (const scenario of scenarioRevisions) {

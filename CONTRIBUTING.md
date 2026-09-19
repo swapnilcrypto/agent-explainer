@@ -19,6 +19,10 @@ Avoid randomness, current dates, external services, downloaded code, and real-wo
 
 The [duplicate-action module](src/scenarios/duplicate-action.ts) is a complete worked example. Its [domain and shared contract tests](tests/simulation.test.ts) demonstrate the required assertions. Shared contract tests automatically cover every registered revision.
 
+## Optional learning questions
+
+Add a prediction and a repair question to `src/learning/questions.ts`, keyed by the exact scenario ID and revision. Each needs one correct option and an explanation for every option, including plausible misconceptions. Use the existing questions as the example. `npm run validate` checks the question contract. Keep this UI content separate from simulation behavior; do not change historical frames to support a quiz.
+
 ## Preserve links
 
 Published scenario revisions are immutable. For a behavioral change, copy the module to a new revision, retain the original in the registry, and bump its `revision`. Keep revision 1 routes working. Editorial corrections that change teaching meaning should also use a new revision. Theme or layout changes may improve every revision.

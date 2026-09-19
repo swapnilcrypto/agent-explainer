@@ -20,6 +20,8 @@ Agent Explainer is a free, open-source science lab for developers learning agent
 | [The forgotten instruction](https://swapnilcrypto.github.io/agent-explainer/#/experiment/forgotten-instruction/1/baseline/0) | Compaction drops “draft only” and the simulated agent publishes.                  | Retain constraints outside the compressed history. |
 | [The premature “done”](https://swapnilcrypto.github.io/agent-explainer/#/experiment/premature-done/1/baseline/0)             | A tool accepts a job and the agent announces completion before the report exists. | Verify the authoritative result.                   |
 
+Optionally make a prediction before running, review it after the failure, and check your understanding after the repair. Answers stay in tab memory and are never saved or shared. A “This step is confusing” link opens an issue form with the selected event filled in; posting feedback on GitHub requires an account.
+
 Inspect three separate views: information available to the agent, agent/tool activity, and actual world state. Navigate the timeline, replay with the repair, then share a link to the exact selected step.
 
 ## Run locally

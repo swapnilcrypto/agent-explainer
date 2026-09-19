@@ -18,6 +18,12 @@ Shared links override local learning indicators. No route is restored from brows
 
 Preferences use a single versioned storage key. Reading, writing, and clipboard access can all fail without blocking the lab. Shared links contain no arbitrary user text or private data. Modal dialogs use native focus containment and restore focus on close.
 
+## Optional learning and feedback
+
+Supplementary questions are keyed by exact scenario ID and revision in `src/learning/questions.ts`. They do not alter published simulation frames. Predictions are reviewed after the baseline result; reflection questions explain each answer after the repaired run. Both are optional and never block playback. Answers live only in React memory, not preferences or URLs. Restart, replay, scenario/history navigation, and refresh clear them; ordinary step inspection preserves them.
+
+The feedback link uses only the canonical public experiment URL, scenario metadata, and selected event. GitHub query parameters select `explanation.yml` and prefill its `experiment` field. Clicking the link pauses playback and opens a separate tab for review. Posting requires a GitHub account and a separate submission on GitHub. Nothing is posted automatically. Browser tests intercept that external navigation; they do not create issues.
+
 ## Capability boundaries
 
 All visitors have the same public, local capabilities. There are no accounts, tenant data, real writes, emails, payments, or secrets. Server authorization, database transactions, and external-tool recovery are therefore not application requirements. The effects being taught are simulated data transitions, not production integrations.

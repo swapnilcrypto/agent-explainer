@@ -19,6 +19,8 @@ Ask afterward:
 
 A participant passes if they complete the run/inspect/repair/share journey without instructions and explain that the first write succeeded, the timeout left the result uncertain, and the service deduplicates a repeated operation key. They should recognize the example as a simulation.
 
+Participants may use the optional prediction and repair questions, but selecting the correct option alone is not evidence of understanding. Ask for the mechanism in their own words after closing the question. Note any confusion with the feedback link without requiring a GitHub account or asking participants to publish a test issue.
+
 The launch gate is at least eight passes out of ten. Record time to first insight and points of confusion as qualitative evidence, not artificial performance scores.
 
 Use anonymous participant IDs. Store consented research notes outside the public repository. Publish only aggregate results with permission. Fix recurring confusion and run a new cohort when major interaction changes occur.

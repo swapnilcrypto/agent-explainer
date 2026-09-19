@@ -43,6 +43,9 @@ import {
 import { glossary } from './lib/glossary'
 import { Dialog } from './components/Dialog'
 import { WorldView } from './components/WorldView'
+import { LearningCheck } from './components/LearningCheck'
+import { getLessonQuestions } from './learning/questions'
+import { explanationFeedbackURL } from './lib/feedback'
 import type { Variant } from './simulation/types'
 
 const REPO = 'https://github.com/swapnilcrypto/agent-explainer'
@@ -66,7 +69,9 @@ export default function App() {
   const [modal, setModal] = useState<'concepts' | 'share' | null>(null)
   const [selectedTerm, setSelectedTerm] = useState<string | null>(null)
   const [copyState, setCopyState] = useState('')
+  const [answers, setAnswers] = useState<{ prediction?: string; reflection?: string }>({})
   const scenario = getScenario(route.id, route.revision)!
+  const questions = getLessonQuestions(scenario.id, scenario.revision)
   const result = useMemo(() => runScenario(scenario, route.variant), [scenario, route.variant])
   const baseline = useMemo(() => runScenario(scenario, 'baseline'), [scenario])
   const frame = result.frames[route.step]
@@ -82,6 +87,7 @@ export default function App() {
       setNotice(parsed.notice)
       setPlaying(false)
       setSelectedTerm(null)
+      setAnswers({})
       setPreferences((p) => withCompletion(p, parsed.route))
     }
     window.addEventListener('hashchange', listener)
@@ -121,6 +127,7 @@ export default function App() {
     setPlaying(play)
     setNotice(undefined)
     setSelectedTerm(null)
+    setAnswers({})
     setPreferences((p) => withCompletion(p, next))
   }
   function selectScenario(id: string) {
@@ -353,6 +360,17 @@ export default function App() {
             <p>“{scenario.task}”</p>
           </div>
 
+          {questions && !repaired && route.step === 0 && (
+            <div className="prediction-slot">
+              <LearningCheck
+                title="Make a prediction"
+                question={questions.prediction}
+                answerId={answers.prediction}
+                onAnswer={(prediction) => setAnswers((current) => ({ ...current, prediction }))}
+              />
+            </div>
+          )}
+
           <div className="simulation-toolbar">
             <div className={`mode-label ${repaired ? 'mode-repaired' : ''}`}>
               {repaired ? <ShieldCheck size={15} /> : <FlaskConical size={15} />}
@@ -541,6 +559,18 @@ export default function App() {
             </span>
             <p>{frame.explanation}</p>
           </div>
+          <div className="step-feedback">
+            <a
+              href={explanationFeedbackURL(route, scenario, frame)}
+              target="_blank"
+              rel="noreferrer"
+              onClick={() => setPlaying(false)}
+              aria-describedby="feedback-destination"
+            >
+              This step is confusing <ExternalLink size={12} />
+            </a>
+            <span id="feedback-destination">Review on GitHub. Sign-in required to post.</span>
+          </div>
 
           <div className="timeline-section">
             <div className="timeline-label">
@@ -646,6 +676,24 @@ export default function App() {
                   Apply repair <ArrowRight size={16} />
                 </button>
               </div>
+            )}
+            {questions && repaired && (
+              <LearningCheck
+                title="Check your understanding"
+                question={questions.reflection}
+                answerId={answers.reflection}
+                onAnswer={(reflection) => setAnswers((current) => ({ ...current, reflection }))}
+                reveal
+              />
+            )}
+            {questions && !repaired && answers.prediction && (
+              <LearningCheck
+                title="Review your prediction"
+                question={questions.prediction}
+                answerId={answers.prediction}
+                onAnswer={(prediction) => setAnswers((current) => ({ ...current, prediction }))}
+                reveal
+              />
             )}
           </section>
         )}

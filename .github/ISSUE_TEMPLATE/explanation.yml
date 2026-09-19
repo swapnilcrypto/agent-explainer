@@ -2,9 +2,11 @@ name: Improve an explanation
 description: A term, source, or experiment could be clearer or more accurate.
 title: '[Explanation] '
 body:
-  - type: input
+  - type: textarea
+    id: experiment
     attributes:
       label: Experiment link or concept
+      description: The lab fills in the selected event. Review it before posting; do not include private data.
     validations:
       required: true
   - type: textarea

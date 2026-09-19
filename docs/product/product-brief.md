@@ -13,3 +13,5 @@ The primary user is a developer learning agents. Educators, technical writers, a
 Quality target: at least eight of ten pilot participants complete an experiment unaided and correctly explain the repair. Community ambition: work toward 1,000 genuine GitHub stars without forecasting a result. Beta availability does not imply the pilot or stable release gate has passed.
 
 See architecture, verification, and release documentation for implementation evidence and constraints.
+
+Approved launch polish: add optional predictions before baseline runs, explanations after the observed result, and a short check after each repair. Answers remain in tab memory and are cleared by restart, replay, navigation, or refresh. Add an event-specific feedback link that opens a prefilled GitHub issue form for review; it does not submit feedback automatically. The human pilot and tagged-release gate remain unchanged.

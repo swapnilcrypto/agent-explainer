@@ -2,7 +2,22 @@
 
 Release candidate: **0.1.0-beta.1**. Evidence recorded on **2026-09-19**.
 
-## Verified locally
+## Launch-polish update
+
+Optional prediction and repair questions, plus event-specific feedback, were added after the initial beta. Simulation revisions and frames are unchanged.
+
+| Capability                      | Status           | Evidence                                                                                                                                                                                                                        | Remaining limitation                                                                                                         |
+| ------------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Prediction and repair questions | Tested locally   | 35 unit/interface tests and 68 browser checks pass across Chromium, Firefox, WebKit, and mobile Chromium emulation. The new checks cover all three lessons, answer explanations, resets, shared-link privacy, and optional use. | Human comprehension pilot remains pending.                                                                                   |
+| Accessibility and layout        | Verified locally | Expanded questions pass axe checks in light/dark themes and reduced motion; keyboard radio navigation, 320px overflow checks, and desktop/mobile screenshots were reviewed.                                                     | Physical devices and screen-reader user testing remain unverified.                                                           |
+| Event feedback link             | Tested locally   | Exact issue-form field ID, canonical public URL, scenario revision, run variant, and one-based event label are checked. Browser tests intercept the outbound page and confirm playback pauses; no issue is submitted.           | The real GitHub page presents sign-in in the available browser, so the signed-in form view and submission remain unverified. |
+| Public deployment               | Pending          | Local production asset and CI evidence will be recorded after deployment.                                                                                                                                                       | New controls have not yet been checked on the public host.                                                                   |
+
+The macOS WebKit keyboard test uses Option-Tab, matching its default navigation preference ([Apple keyboard guidance](https://support.apple.com/en-hk/guide/safari/cpsh003/mac)). No browser or operating-system preferences were changed.
+
+An initial test caught concatenated accessible text in the question toggle; an explicit, readable accessible label fixes it. The tests now exercise the same label on every browser.
+
+## Initial beta verification
 
 | Check                         | Evidence                                                                                                                                                                                                                          |
 | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
