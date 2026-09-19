@@ -6,18 +6,29 @@ Release candidate: **0.1.0-beta.1**. Evidence recorded on **2026-09-19**.
 
 Optional prediction and repair questions, plus event-specific feedback, were added after the initial beta. Simulation revisions and frames are unchanged.
 
-| Capability                      | Status           | Evidence                                                                                                                                                                                                                        | Remaining limitation                                                                                                         |
-| ------------------------------- | ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
-| Prediction and repair questions | Tested locally   | 35 unit/interface tests and 68 browser checks pass across Chromium, Firefox, WebKit, and mobile Chromium emulation. The new checks cover all three lessons, answer explanations, resets, shared-link privacy, and optional use. | Human comprehension pilot remains pending.                                                                                   |
-| Accessibility and layout        | Verified locally | Expanded questions pass axe checks in light/dark themes and reduced motion; keyboard radio navigation, 320px overflow checks, and desktop/mobile screenshots were reviewed.                                                     | Physical devices and screen-reader user testing remain unverified.                                                           |
-| Event feedback link             | Tested locally   | Exact issue-form field ID, canonical public URL, scenario revision, run variant, and one-based event label are checked. Browser tests intercept the outbound page and confirm playback pauses; no issue is submitted.           | The real GitHub page presents sign-in in the available browser, so the signed-in form view and submission remain unverified. |
-| Public deployment               | Pending          | Local production asset and CI evidence will be recorded after deployment.                                                                                                                                                       | New controls have not yet been checked on the public host.                                                                   |
+| Capability                      | Status                  | Evidence                                                                                                                                                                                                                                                                                           | Remaining limitation                                                                                                         |
+| ------------------------------- | ----------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| Prediction and repair questions | Passed                  | 35 unit/interface tests and 72 browser checks pass in GitHub Actions. All 72 browser checks also pass on the public host across Chromium, Firefox, WebKit, and mobile Chromium emulation. Coverage includes all three lessons, answer explanations, resets, shared-link privacy, and optional use. | Human comprehension pilot remains pending.                                                                                   |
+| Accessibility and layout        | Passed automated checks | Expanded questions pass axe checks in light/dark themes and reduced motion; keyboard radio navigation and 320px overflow checks pass. Desktop/mobile screenshots were reviewed.                                                                                                                    | Physical devices and screen-reader user testing remain unverified.                                                           |
+| Event feedback link             | Passed link checks      | Exact issue-form field ID, canonical public URL, scenario revision, run variant, and one-based event label are checked. Browser tests intercept the outbound page and confirm playback pauses; no issue is submitted.                                                                              | The real GitHub page presents sign-in in the available browser, so the signed-in form view and submission remain unverified. |
+| Public deployment               | Passed                  | The current JavaScript and stylesheet were confirmed on the public host before running all 72 browser checks successfully.                                                                                                                                                                         | Human release gates below remain open.                                                                                       |
 
 The macOS WebKit keyboard test uses Option-Tab, matching its default navigation preference ([Apple keyboard guidance](https://support.apple.com/en-hk/guide/safari/cpsh003/mac)). No browser or operating-system preferences were changed.
 
-The first Linux CI run caught a 320px overflow in the existing before/after comparison when a wider fallback font rendered “Unpublished.” A regression test reproduced it locally. Narrow screens now stack the comparison, and grid tracks can shrink safely. The eight focused layout/accessibility checks pass locally; the full suite now contains 72 browser tests. See the [narrow comparison](media/narrow-comparison.png).
+The first Linux CI run caught a 320px overflow in the existing before/after comparison when a wider fallback font rendered “Unpublished.” A regression test reproduced it locally. Narrow screens now stack the comparison, and grid tracks can shrink safely. The eight focused layout/accessibility checks pass locally; all 72 browser tests pass in Linux CI and against the public deployment. See the [narrow comparison](media/narrow-comparison.png).
 
 An initial test caught concatenated accessible text in the question toggle; an explicit, readable accessible label fixes it. The tests now exercise the same label on every browser.
+
+### Current deployment and release evidence
+
+- Application commit: [`c0be8bf`](https://github.com/swapnilcrypto/agent-explainer/commit/c0be8bfe95cd6fdd233563a3e757ddf0497180c8). [Passing verification and Pages deployment](https://github.com/swapnilcrypto/agent-explainer/actions/runs/35475457810).
+- `npm run check` passes: type checking, lint, 35 unit/interface tests, all six scenario variants and supplemental learning metadata, production build, and bundle budget. `npm audit --audit-level=high` reports zero vulnerabilities at verification time.
+- Public browser verification: `PLAYWRIGHT_BASE_URL=https://swapnilcrypto.github.io/agent-explainer/ npx playwright test` completed with **72 passed**, including direct links, refresh, navigation, repair/replay, storage/clipboard failures, privacy, and new learning controls.
+- Verified deployed assets: `index-BcYUAuSz.js` and `index-BPob4gkD.css`. All application JavaScript totals **84.8 KiB gzip**, below the requested 250 KB budget.
+- Current archive: `agent-explainer-v0.1.0-beta.1-c0be8bf.tar.gz`, prepared directly from the passing GitHub Pages artifact. SHA-256: `5825008d70fdce7610a48263232dc91705d6f482b229889b9710c835d45f5852`.
+- The maintainer-only [draft release](https://github.com/swapnilcrypto/agent-explainer/releases/tag/untagged-5f1a0f6c0353dab7daf9) targets this passing application commit. Earlier archives are retained with checksums and build notes. The release remains unpublished pending the human pilot.
+
+The evidence below records the earlier beta. Its counts and hashes describe that earlier build. Documentation-only evidence updates may follow the current application commit without changing the application assets.
 
 ## Initial beta verification
 
@@ -38,16 +49,16 @@ An initial test caught concatenated accessible text in the question toggle; an e
 
 Contrast testing initially found secondary labels that were too faint. Their colors were corrected and the complete browser suite passed afterward. A final scenario-interface change made initial conditions explicit and added checks that runs cannot mutate them; the complete local checks were rerun.
 
-## Release checks
+## Initial beta release checks
 
 - Clean-checkout installation: passed from a fresh local Git clone. `npm ci`, `npm run check`, and the README development server were exercised; a browser loaded the app and advanced the first experiment.
 - GitHub Actions and public Pages deployment: passed for application commit [`3a07201`](https://github.com/swapnilcrypto/agent-explainer/commit/3a07201fdea9ccf874ca59959dbcec2931488365). [Passing verification and deployment run](https://github.com/swapnilcrypto/agent-explainer/actions/runs/35473674800).
 - Public URL, assets, and direct shared links: all **44 browser tests passed against the live Pages URL**, using `PLAYWRIGHT_BASE_URL=https://swapnilcrypto.github.io/agent-explainer/ npx playwright test`. Public HTML, JavaScript, CSS, favicon, and social image returned HTTP 200. The checked application asset is `index-CT7KvDfW.js`.
-- Versioned archive and checksum: prepared directly from the passing GitHub Pages artifact. The maintainer-only [draft release](https://github.com/swapnilcrypto/agent-explainer/releases/tag/untagged-00f813f27a887a0ca581) contains the current static archive, the previous public build, build notes, and `SHA256SUMS.txt`. The release remains unpublished pending the pilot.
+- Versioned archive and checksum: prepared directly from the passing GitHub Pages artifact. These earlier archives remain attached to the maintainer-only draft release, alongside the updated build, build notes, and `SHA256SUMS.txt`.
 
 The release archive is tied to the passing application commit above. Documentation-only evidence updates may follow it without changing the application asset.
 
-Current archive SHA-256: `55914bfa4e94d5e58e2296042f5bc3f277ebf5943a66012ef876dc1b232efe7f`.
+Initial beta archive SHA-256 (commit `3a07201`): `55914bfa4e94d5e58e2296042f5bc3f277ebf5943a66012ef876dc1b232efe7f`.
 
 Previous archive (commit `760a02e`) SHA-256: `c2ae8988a5ef4867f2dcf6fe93bb778352aacf653a2a4dc77cfb739ba0ac26c4`.
 
