@@ -15,6 +15,8 @@ Optional prediction and repair questions, plus event-specific feedback, were add
 
 The macOS WebKit keyboard test uses Option-Tab, matching its default navigation preference ([Apple keyboard guidance](https://support.apple.com/en-hk/guide/safari/cpsh003/mac)). No browser or operating-system preferences were changed.
 
+The first Linux CI run caught a 320px overflow in the existing before/after comparison when a wider fallback font rendered “Unpublished.” A regression test reproduced it locally. Narrow screens now stack the comparison, and grid tracks can shrink safely. The eight focused layout/accessibility checks pass locally; the full suite now contains 72 browser tests. See the [narrow comparison](media/narrow-comparison.png).
+
 An initial test caught concatenated accessible text in the question toggle; an explicit, readable accessible label fixes it. The tests now exercise the same label on every browser.
 
 ## Initial beta verification

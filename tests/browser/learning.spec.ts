@@ -150,3 +150,27 @@ test('expanded learning checks support keyboard, contrast, and narrow screens', 
     true,
   )
 })
+
+// Wider fallback fonts exposed a real overflow in the before/after comparison on Linux.
+test('long comparison labels fit a 320px viewport with wider fallback fonts', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 740 })
+  for (const [id, step] of [
+    ['duplicate-action', 7],
+    ['forgotten-instruction', 6],
+    ['premature-done', 8],
+  ] as const) {
+    await page.goto(`./#/experiment/${id}/1/repaired/${step}`)
+    await page.evaluate(() => (document.documentElement.style.fontFamily = 'Verdana, sans-serif'))
+    await expect(page.locator('.comparison')).toBeVisible()
+    expect(
+      await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth),
+    ).toBe(true)
+    const fits = await page.locator('.comparison').evaluate((panel) => {
+      const outer = panel.getBoundingClientRect()
+      return [...panel.querySelectorAll('strong')].every(
+        (label) => label.getBoundingClientRect().right <= outer.right,
+      )
+    })
+    expect(fits).toBe(true)
+  }
+})
