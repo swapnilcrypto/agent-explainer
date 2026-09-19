@@ -1,0 +1,28 @@
+name: Public demo smoke check
+on:
+  schedule:
+    - cron: '23 13 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check root and built asset
+        run: |
+          node --input-type=module <<'JS'
+          const root = 'https://swapnilcrypto.github.io/agent-explainer/';
+          const page = await fetch(root);
+          if (!page.ok) throw new Error(`Demo returned ${page.status}`);
+          const html = await page.text();
+          if (!html.includes('Agent Explainer')) throw new Error('Unexpected page');
+          const asset = html.match(/src="([^"]+\.js)"/);
+          if (!asset) throw new Error('No application script');
+          const script = await fetch(new URL(asset[1], root));
+          if (!script.ok) throw new Error(`Script returned ${script.status}`);
+          console.log('Public demo and application asset are available.');
+          JS

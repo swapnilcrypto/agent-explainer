@@ -1,0 +1,19 @@
+name: Propose an experiment
+description: Teach one failure and one repair.
+title: '[Experiment] '
+body:
+  - type: textarea
+    attributes:
+      label: The task, failure, and single repair
+      description: What changes in the authoritative world, and why?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Evidence and sources
+      description: Link primary documentation or research. Explain the assumptions and limits.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What should the learner understand afterward?

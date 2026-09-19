@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f6f8f7"/>
+  <rect x="48" y="42" width="36" height="36" rx="10" fill="#11634d"/>
+  <path d="M60 52v17h12M60 53h12" stroke="#fff" stroke-width="2" fill="none"/>
+  <g fill="#fff"><circle cx="60" cy="53" r="3"/><circle cx="72" cy="53" r="3"/><circle cx="72" cy="69" r="3"/></g>
+  <g font-family="Arial, sans-serif">
+    <text x="97" y="67" font-size="23" font-weight="700" fill="#22332f">Agent Explainer</text>
+    <text x="1150" y="64" text-anchor="end" font-size="14" fill="#53685d">OPEN SOURCE · NO API KEYS</text>
+    <text x="49" y="163" font-size="13" letter-spacing="2.4" fill="#11634d">THE INTERACTIVE AGENT LAB</text>
+    <text x="46" y="239" font-size="68" font-weight="700" letter-spacing="-2.5" fill="#22332f">See the failure.</text>
+    <text x="46" y="315" font-size="68" font-weight="700" letter-spacing="-2.5" fill="#11634d">Understand the fix.</text>
+    <text x="49" y="359" font-size="21" fill="#53685d">Watch an agent fail. Change one thing. Replay the same case.</text>
+    <rect x="48" y="410" width="352" height="130" rx="12" fill="#e9f3ed" stroke="#11634d" stroke-width="2"/>
+    <text x="70" y="444" font-size="12" fill="#53685d">01 / RETRIES &amp; IDEMPOTENCY</text>
+    <text x="70" y="482" font-size="22" font-weight="700" fill="#22332f">One request. Two tickets.</text>
+    <text x="70" y="515" font-size="15" fill="#11634d">Lose the response. Find the repair. →</text>
+    <rect x="424" y="410" width="352" height="130" rx="12" fill="#fff" stroke="#dee6e1"/>
+    <text x="446" y="444" font-size="12" fill="#53685d">02 / CONTEXT &amp; COMPACTION</text>
+    <text x="446" y="482" font-size="22" font-weight="700" fill="#22332f">The forgotten instruction.</text>
+    <text x="446" y="515" font-size="15" fill="#53685d">A shorter memory. A lost rule.</text>
+    <rect x="800" y="410" width="352" height="130" rx="12" fill="#fff" stroke="#dee6e1"/>
+    <text x="822" y="444" font-size="12" fill="#53685d">03 / TOOLS &amp; VERIFICATION</text>
+    <text x="822" y="482" font-size="22" font-weight="700" fill="#22332f">The premature “done”.</text>
+    <text x="822" y="515" font-size="15" fill="#53685d">Accepted is not completed.</text>
+    <text x="49" y="592" font-size="13" fill="#53685d">Deterministic teaching simulations. Everything runs in your browser.</text>
+  </g>
+</svg>

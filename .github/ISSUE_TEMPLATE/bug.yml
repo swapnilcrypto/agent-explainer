@@ -1,0 +1,21 @@
+name: Bug report
+description: Something in the lab does not work as expected.
+title: '[Bug] '
+body:
+  - type: textarea
+    attributes:
+      label: Experiment link and steps
+      description: Share the exact experiment link and what you did. Do not include private transcripts.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: input
+    attributes:
+      label: Browser, operating system, and device
+  - type: textarea
+    attributes:
+      label: Screenshots or accessibility details

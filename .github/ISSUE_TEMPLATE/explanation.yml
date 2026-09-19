@@ -1,0 +1,17 @@
+name: Improve an explanation
+description: A term, source, or experiment could be clearer or more accurate.
+title: '[Explanation] '
+body:
+  - type: input
+    attributes:
+      label: Experiment link or concept
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: What is confusing or inaccurate?
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Suggested wording or supporting source
