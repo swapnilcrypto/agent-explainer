@@ -15,7 +15,7 @@ See how AI agents work—and why they fail. Run a small experiment, inspect the 
 
 ## Verification
 
-The passing commit must include type checking, lint, 30 unit/interface tests, six validated scenario variants, 44 browser tests, and the production build. Browser projects cover Chromium, Firefox, WebKit, and mobile Chromium emulation. JavaScript is approximately 83 KiB gzip against a 250 KB budget.
+Commit `3a07201fdea9ccf874ca59959dbcec2931488365` passed type checking, lint, 30 unit/interface tests, six validated scenario variants, 44 browser tests, and the production build in [GitHub Actions](https://github.com/swapnilcrypto/agent-explainer/actions/runs/35473674800). The same 44 browser tests also passed against the live GitHub Pages URL. Browser projects cover Chromium, Firefox, WebKit, and mobile Chromium emulation. JavaScript is approximately 83 KiB gzip against a 250 KB budget.
 
 See the [verification ledger](https://github.com/swapnilcrypto/agent-explainer/blob/main/docs/verification.md) for the deployed revision, public-host test results, and limitations.
 

@@ -24,11 +24,15 @@ Contrast testing initially found secondary labels that were too faint. Their col
 ## Release checks
 
 - Clean-checkout installation: passed from a fresh local Git clone. `npm ci`, `npm run check`, and the README development server were exercised; a browser loaded the app and advanced the first experiment.
-- GitHub Actions and public Pages deployment: pending.
-- Public URL, assets, and direct shared links: pending.
-- Versioned archive and checksum: pending.
+- GitHub Actions and public Pages deployment: passed for application commit [`3a07201`](https://github.com/swapnilcrypto/agent-explainer/commit/3a07201fdea9ccf874ca59959dbcec2931488365). [Passing verification and deployment run](https://github.com/swapnilcrypto/agent-explainer/actions/runs/35473674800).
+- Public URL, assets, and direct shared links: all **44 browser tests passed against the live Pages URL**, using `PLAYWRIGHT_BASE_URL=https://swapnilcrypto.github.io/agent-explainer/ npx playwright test`. Public HTML, JavaScript, CSS, favicon, and social image returned HTTP 200. The checked application asset is `index-CT7KvDfW.js`.
+- Versioned archive and checksum: prepared directly from the passing GitHub Pages artifact. The maintainer-only [draft release](https://github.com/swapnilcrypto/agent-explainer/releases/tag/untagged-00f813f27a887a0ca581) contains the current static archive, the previous public build, build notes, and `SHA256SUMS.txt`. The release remains unpublished pending the pilot.
 
-These entries are updated with links and results when completed. No pending item is represented as a verified result.
+The release archive is tied to the passing application commit above. Documentation-only evidence updates may follow it without changing the application asset.
+
+Current archive SHA-256: `55914bfa4e94d5e58e2296042f5bc3f277ebf5943a66012ef876dc1b232efe7f`.
+
+Previous archive (commit `760a02e`) SHA-256: `c2ae8988a5ef4867f2dcf6fe93bb778352aacf653a2a4dc77cfb739ba0ac26c4`.
 
 ## Unverified and intentionally deferred
 
@@ -36,5 +40,5 @@ These entries are updated with links and results when completed. No pending item
 - **Assistive technology:** automated accessibility and keyboard checks are not a screen-reader user study. Physical mobile devices and a manual screen-reader audit remain unverified.
 - **Community reception:** no claim of adoption, star growth, or virality is made. The launch post is a draft and has not been distributed.
 - **Real-model behavior:** outcomes are authored simulations, not model evaluations. Retained instructions do not guarantee model compliance; real systems need independent permissions.
-- **Rollback:** the first release has no earlier public deployment to restore. Retain its archive and checksum as the rollback baseline before the next deployment; the rollback procedure is documented but has not yet been exercised against a prior release.
+- **Rollback exercise:** the previous public deployment has been retained as an archive with a checksum. The workflow can rebuild that passing commit using `deploy_ref`. Restoring an earlier deployment has not been exercised on the public site.
 - Continuous batching is planned for the next release and is not implemented here.

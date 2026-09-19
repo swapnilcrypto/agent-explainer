@@ -20,7 +20,7 @@ Set GitHub Pages to GitHub Actions as its build source. Use Node 22 and `npm ci`
 
 ## Rollback
 
-Download the previous known-good static archive from its GitHub release. Verify its checksum and retain it before deploying a newer version. To restore through the workflow, dispatch the Pages workflow with the previous passing commit or release tag as `deploy_ref`. It checks out, rebuilds, tests, and deploys that revision. Normal push deployments build the triggering commit.
+Download the previous known-good static archive from its GitHub release (or the maintainer-only draft during the pilot). Verify its checksum and retain it before deploying a newer version. To restore through the workflow, dispatch the Pages workflow with the previous passing commit or release tag as `deploy_ref`. It checks out, rebuilds, tests, and deploys that revision. Normal push deployments build the triggering commit.
 
 If only a scene changed incorrectly, prefer publishing a corrected new scenario revision while preserving historical revisions. Never silently change a published revision's behavior.
 
