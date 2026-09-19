@@ -48,7 +48,7 @@ import { getLessonQuestions } from './learning/questions'
 import { explanationFeedbackURL } from './lib/feedback'
 import type { Variant } from './simulation/types'
 
-const REPO = 'https://github.com/swapnilcrypto/agent-explainer'
+const REPO = 'https://github.com/swapupg/agent-explainer'
 const icons = [Ticket, Layers3, FileCheck2]
 const initial = () => decodeRoute(window.location.hash)
 function withCompletion(preferences: Preferences, route: Route): Preferences {

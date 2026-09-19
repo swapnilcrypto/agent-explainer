@@ -2,8 +2,8 @@ import type { ScenarioDefinition, SimulationFrame } from '../simulation/types'
 import { encodeRoute, type Route } from './navigation'
 
 // Use the public lab URL, never the visitor's query string, host, or learning answers.
-const publicLab = 'https://swapnilcrypto.github.io/agent-explainer/'
-const repository = 'https://github.com/swapnilcrypto/agent-explainer'
+const publicLab = 'https://swapupg.github.io/agent-explainer/'
+const repository = 'https://github.com/swapupg/agent-explainer'
 
 export function explanationFeedbackURL(
   route: Route,

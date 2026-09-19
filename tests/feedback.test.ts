@@ -12,11 +12,11 @@ it('prefills the correct public experiment, revision, variant, and human-readabl
         const route = { id: scenario.id, revision: scenario.revision, variant, step: frame.step }
         const url = new URL(explanationFeedbackURL(route, scenario, frame))
         expect(url.origin + url.pathname).toBe(
-          'https://github.com/swapnilcrypto/agent-explainer/issues/new',
+          'https://github.com/swapupg/agent-explainer/issues/new',
         )
         expect(url.searchParams.get('template')).toBe('explanation.yml')
         expect(url.searchParams.get('experiment')).toContain(
-          `https://swapnilcrypto.github.io/agent-explainer/#/experiment/${scenario.id}/1/${variant}/${frame.step}`,
+          `https://swapupg.github.io/agent-explainer/#/experiment/${scenario.id}/1/${variant}/${frame.step}`,
         )
         expect(url.searchParams.get('experiment')).toContain(
           `Selected step: ${frame.step + 1} — ${frame.activity.label}`,

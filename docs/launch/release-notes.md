@@ -2,7 +2,7 @@
 
 See how AI agents work—and why they fail. Run a small experiment, inspect the failure, apply one repair, and replay the same situation.
 
-[Open the public beta](https://swapnilcrypto.github.io/agent-explainer/)
+[Open the public beta](https://swapupg.github.io/agent-explainer/)
 
 ## Included
 
@@ -17,11 +17,11 @@ See how AI agents work—and why they fail. Run a small experiment, inspect the 
 
 ## Verification
 
-Commit `c0be8bfe95cd6fdd233563a3e757ddf0497180c8` passed type checking, lint, 35 unit/interface tests, six validated scenario variants, 72 browser tests, dependency auditing, and the production build in [GitHub Actions](https://github.com/swapnilcrypto/agent-explainer/actions/runs/35475457810). The same 72 browser tests also passed against the live GitHub Pages URL. Browser projects cover Chromium, Firefox, WebKit, and mobile Chromium emulation. JavaScript is 84.8 KiB gzip against a 250 KB budget.
+Commit `c0be8bfe95cd6fdd233563a3e757ddf0497180c8` passed type checking, lint, 35 unit/interface tests, six validated scenario variants, 72 browser tests, dependency auditing, and the production build in [GitHub Actions](https://github.com/swapupg/agent-explainer/actions/runs/35475457810). The same 72 browser tests also passed against the live GitHub Pages URL. Browser projects cover Chromium, Firefox, WebKit, and mobile Chromium emulation. JavaScript is 84.8 KiB gzip against a 250 KB budget.
 
 The outcome comparison now stacks on narrow screens. A regression check covers longer labels and wider fallback fonts at 320px. Feedback-link generation and opening are tested; the signed-in GitHub form and issue submission remain unverified.
 
-See the [verification ledger](https://github.com/swapnilcrypto/agent-explainer/blob/main/docs/verification.md) for the deployed revision, public-host test results, and limitations.
+See the [verification ledger](https://github.com/swapupg/agent-explainer/blob/main/docs/verification.md) for the deployed revision, public-host test results, and limitations.
 
 ## Publication gate
 

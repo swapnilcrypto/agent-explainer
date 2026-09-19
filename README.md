@@ -2,9 +2,9 @@
 
 **See how AI agents work—and why they fail.**
 
-[![Watch a failed retry become a safe retry](docs/media/duplicate-action-preview.gif)](https://swapnilcrypto.github.io/agent-explainer/)
+[![Watch a failed retry become a safe retry](docs/media/duplicate-action-preview.gif)](https://swapupg.github.io/agent-explainer/)
 
-**[Open the interactive lab →](https://swapnilcrypto.github.io/agent-explainer/)** · [Watch the demonstrations](docs/launch/educator-walkthrough.md) · [Contribute an experiment](CONTRIBUTING.md)
+**[Open the interactive lab →](https://swapupg.github.io/agent-explainer/)** · [Watch the demonstrations](docs/launch/educator-walkthrough.md) · [Contribute an experiment](CONTRIBUTING.md)
 
 Watch an agent fail. Inspect the evidence. Change one mechanism. Replay the same situation.
 
@@ -16,9 +16,9 @@ Agent Explainer is a free, open-source science lab for developers learning agent
 
 | Experiment                                                                                                                   | What goes wrong                                                                   | What you change                                    |
 | ---------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- | -------------------------------------------------- |
-| [The duplicate action](https://swapnilcrypto.github.io/agent-explainer/#/experiment/duplicate-action/1/baseline/0)           | A tool commits a ticket, its response disappears, and a retry creates another.    | Reuse an idempotency key.                          |
-| [The forgotten instruction](https://swapnilcrypto.github.io/agent-explainer/#/experiment/forgotten-instruction/1/baseline/0) | Compaction drops “draft only” and the simulated agent publishes.                  | Retain constraints outside the compressed history. |
-| [The premature “done”](https://swapnilcrypto.github.io/agent-explainer/#/experiment/premature-done/1/baseline/0)             | A tool accepts a job and the agent announces completion before the report exists. | Verify the authoritative result.                   |
+| [The duplicate action](https://swapupg.github.io/agent-explainer/#/experiment/duplicate-action/1/baseline/0)           | A tool commits a ticket, its response disappears, and a retry creates another.    | Reuse an idempotency key.                          |
+| [The forgotten instruction](https://swapupg.github.io/agent-explainer/#/experiment/forgotten-instruction/1/baseline/0) | Compaction drops “draft only” and the simulated agent publishes.                  | Retain constraints outside the compressed history. |
+| [The premature “done”](https://swapupg.github.io/agent-explainer/#/experiment/premature-done/1/baseline/0)             | A tool accepts a job and the agent announces completion before the report exists. | Verify the authoritative result.                   |
 
 Optionally make a prediction before running, review it after the failure, and check your understanding after the repair. Answers stay in tab memory and are never saved or shared. A “This step is confusing” link opens an issue form with the selected event filled in; posting feedback on GitHub requires an account.
 
@@ -29,7 +29,7 @@ Inspect three separate views: information available to the agent, agent/tool act
 Requires Node.js 20.19+ on the 20.x line, or 22.12+ (Node 22 recommended) and npm.
 
 ```sh
-git clone https://github.com/swapnilcrypto/agent-explainer.git
+git clone https://github.com/swapupg/agent-explainer.git
 cd agent-explainer
 npm ci
 npm run dev

@@ -48,9 +48,9 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/swapnilcrypto/agent-explainer.git"
+    "url": "https://github.com/swapupg/agent-explainer.git"
   },
-  "homepage": "https://swapnilcrypto.github.io/agent-explainer/",
+  "homepage": "https://swapupg.github.io/agent-explainer/",
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
   }

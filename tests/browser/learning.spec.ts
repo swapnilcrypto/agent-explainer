@@ -79,7 +79,7 @@ test('feedback opens a reviewable GitHub form for the selected event and pauses 
   page,
   context,
 }) => {
-  await context.route('https://github.com/swapnilcrypto/agent-explainer/issues/new**', (route) =>
+  await context.route('https://github.com/swapupg/agent-explainer/issues/new**', (route) =>
     route.fulfill({ contentType: 'text/html', body: '<h1>Review feedback</h1>' }),
   )
   await page.clock.install()

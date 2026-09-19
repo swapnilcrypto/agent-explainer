@@ -6,6 +6,6 @@ URLs contain only public scenario identifiers and state selections. Local storag
 
 The ordinary explanation-feedback link opens GitHub with public scenario metadata and the selected event in its URL. The visitor can review the issue form before posting; the app does not submit it automatically.
 
-Report a vulnerability through [GitHub private vulnerability reporting](https://github.com/swapnilcrypto/agent-explainer/security/advisories/new). Please include a minimal reproduction, browser version, affected release, and the impact. Do not include secrets or private logs. Use public issues for ordinary bugs without security-sensitive details.
+Report a vulnerability through [GitHub private vulnerability reporting](https://github.com/swapupg/agent-explainer/security/advisories/new). Please include a minimal reproduction, browser version, affected release, and the impact. Do not include secrets or private logs. Use public issues for ordinary bugs without security-sensitive details.
 
 The beta line is supported. Security fixes should be applied promptly and documented in release notes. The local preview script binds to localhost and is not intended for production hosting.

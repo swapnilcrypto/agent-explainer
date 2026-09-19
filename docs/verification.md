@@ -2,6 +2,14 @@
 
 Release candidate: **0.1.0-beta.1**. Evidence recorded on **2026-09-19**.
 
+## Username migration
+
+The repository owner is now `swapupg`. The public demo is [Agent Explainer](https://swapupg.github.io/agent-explainer/) and the source repository is [swapupg/agent-explainer](https://github.com/swapupg/agent-explainer).
+
+Application links, feedback URLs, sharing metadata, launch documentation, the repository homepage, the local Git remote, and the public smoke check now use the new account name. Scenario revisions and simulation behavior are unchanged. Verification of the migrated deployment is pending.
+
+The evidence below is historical. Earlier public browser runs used the former Pages hostname shown in their commands; repository links have been updated to the current owner. Archives from before the rename retain the old links and need the same link migration before use as a rollback build under the new account.
+
 ## Launch-polish update
 
 Optional prediction and repair questions, plus event-specific feedback, were added after the initial beta. Simulation revisions and frames are unchanged.
@@ -19,14 +27,14 @@ The first Linux CI run caught a 320px overflow in the existing before/after comp
 
 An initial test caught concatenated accessible text in the question toggle; an explicit, readable accessible label fixes it. The tests now exercise the same label on every browser.
 
-### Current deployment and release evidence
+### Deployment and release evidence before the rename
 
-- Application commit: [`c0be8bf`](https://github.com/swapnilcrypto/agent-explainer/commit/c0be8bfe95cd6fdd233563a3e757ddf0497180c8). [Passing verification and Pages deployment](https://github.com/swapnilcrypto/agent-explainer/actions/runs/35475457810).
+- Application commit: [`c0be8bf`](https://github.com/swapupg/agent-explainer/commit/c0be8bfe95cd6fdd233563a3e757ddf0497180c8). [Passing verification and Pages deployment](https://github.com/swapupg/agent-explainer/actions/runs/35475457810).
 - `npm run check` passes: type checking, lint, 35 unit/interface tests, all six scenario variants and supplemental learning metadata, production build, and bundle budget. `npm audit --audit-level=high` reports zero vulnerabilities at verification time.
 - Public browser verification: `PLAYWRIGHT_BASE_URL=https://swapnilcrypto.github.io/agent-explainer/ npx playwright test` completed with **72 passed**, including direct links, refresh, navigation, repair/replay, storage/clipboard failures, privacy, and new learning controls.
 - Verified deployed assets: `index-BcYUAuSz.js` and `index-BPob4gkD.css`. All application JavaScript totals **84.8 KiB gzip**, below the requested 250 KB budget.
 - Current archive: `agent-explainer-v0.1.0-beta.1-c0be8bf.tar.gz`, prepared directly from the passing GitHub Pages artifact. SHA-256: `5825008d70fdce7610a48263232dc91705d6f482b229889b9710c835d45f5852`.
-- The maintainer-only [draft release](https://github.com/swapnilcrypto/agent-explainer/releases/tag/untagged-5f1a0f6c0353dab7daf9) targets this passing application commit. Earlier archives are retained with checksums and build notes. The release remains unpublished pending the human pilot.
+- At verification time, the maintainer-only draft release targeted this passing application commit. Earlier archives are retained with checksums and build notes. The release remains unpublished pending the human pilot.
 
 The evidence below records the earlier beta. Its counts and hashes describe that earlier build. Documentation-only evidence updates may follow the current application commit without changing the application assets.
 
@@ -52,7 +60,7 @@ Contrast testing initially found secondary labels that were too faint. Their col
 ## Initial beta release checks
 
 - Clean-checkout installation: passed from a fresh local Git clone. `npm ci`, `npm run check`, and the README development server were exercised; a browser loaded the app and advanced the first experiment.
-- GitHub Actions and public Pages deployment: passed for application commit [`3a07201`](https://github.com/swapnilcrypto/agent-explainer/commit/3a07201fdea9ccf874ca59959dbcec2931488365). [Passing verification and deployment run](https://github.com/swapnilcrypto/agent-explainer/actions/runs/35473674800).
+- GitHub Actions and public Pages deployment: passed for application commit [`3a07201`](https://github.com/swapupg/agent-explainer/commit/3a07201fdea9ccf874ca59959dbcec2931488365). [Passing verification and deployment run](https://github.com/swapupg/agent-explainer/actions/runs/35473674800).
 - Public URL, assets, and direct shared links: all **44 browser tests passed against the live Pages URL**, using `PLAYWRIGHT_BASE_URL=https://swapnilcrypto.github.io/agent-explainer/ npx playwright test`. Public HTML, JavaScript, CSS, favicon, and social image returned HTTP 200. The checked application asset is `index-CT7KvDfW.js`.
 - Versioned archive and checksum: prepared directly from the passing GitHub Pages artifact. These earlier archives remain attached to the maintainer-only draft release, alongside the updated build, build notes, and `SHA256SUMS.txt`.
 
