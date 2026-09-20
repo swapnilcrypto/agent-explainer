@@ -1,5 +1,14 @@
 # Verification ledger
 
+## Model Fieldnotes domain — 20 September 2026
+
+The current demo is [https://modelfieldnotes.com/agent-explainer/](https://modelfieldnotes.com/agent-explainer/). The independent Pages deployment, scenario revisions and simulation behavior are preserved. Canonical metadata, shared feedback links, README, launch documentation and the public smoke workflow use the new domain.
+
+Migration commit `3bc37caab23a4b1b147db24269b406b561cd117f` passed [GitHub Actions](https://github.com/swapupg/agent-explainer/actions/runs/35530430410). All 72 browser checks pass against the live HTTPS address. Additional Chromium, Firefox and WebKit checks verify that the previous GitHub Pages root/project experiment links preserve their hashes and open paused at the intended step. Both domain variants have valid HTTPS certificates; www redirects to the apex. Hosting is inherited from the account website without copying this app into it.
+
+The earlier verification below is retained as migration history; its GitHub Pages demo links now redirect to Model Fieldnotes.
+
+
 Release candidate: **0.1.0-beta.1**. Evidence recorded on **2026-09-19**.
 
 ## Username migration
