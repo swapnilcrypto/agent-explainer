@@ -16,7 +16,7 @@ it('prefills the correct public experiment, revision, variant, and human-readabl
         )
         expect(url.searchParams.get('template')).toBe('explanation.yml')
         expect(url.searchParams.get('experiment')).toContain(
-          `https://swapupg.github.io/agent-explainer/#/experiment/${scenario.id}/1/${variant}/${frame.step}`,
+          `https://modelfieldnotes.com/agent-explainer/#/experiment/${scenario.id}/1/${variant}/${frame.step}`,
         )
         expect(url.searchParams.get('experiment')).toContain(
           `Selected step: ${frame.step + 1} — ${frame.activity.label}`,

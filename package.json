@@ -50,7 +50,7 @@
     "type": "git",
     "url": "https://github.com/swapupg/agent-explainer.git"
   },
-  "homepage": "https://swapupg.github.io/agent-explainer/",
+  "homepage": "https://modelfieldnotes.com/agent-explainer/",
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
   }

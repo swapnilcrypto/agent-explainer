@@ -12,7 +12,7 @@ Then change one mechanism and replay the same case. You can inspect what the age
 
 No account, API key, or model bill. These are clearly labeled, deterministic teaching simulations—not claims about a model's hidden reasoning or benchmark performance.
 
-Try it: https://swapupg.github.io/agent-explainer/
+Try it: https://modelfieldnotes.com/agent-explainer/
 Source: https://github.com/swapupg/agent-explainer
 
 It is in public beta. I would love feedback on which explanation is confusing and which failure deserves the next experiment. Contributions are welcome.

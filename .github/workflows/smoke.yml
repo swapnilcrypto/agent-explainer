@@ -15,7 +15,7 @@ jobs:
       - name: Check root and built asset
         run: |
           node --input-type=module <<'JS'
-          const root = 'https://swapupg.github.io/agent-explainer/';
+          const root = 'https://modelfieldnotes.com/agent-explainer/';
           const page = await fetch(root);
           if (!page.ok) throw new Error(`Demo returned ${page.status}`);
           const html = await page.text();

@@ -1,6 +1,6 @@
 # A 15-minute agent reliability lesson
 
-Use the [live lab](https://swapupg.github.io/agent-explainer/) in a browser. Learners need no account or API key. All effects are simulated.
+Use the [live lab](https://modelfieldnotes.com/agent-explainer/) in a browser. Learners need no account or API key. All effects are simulated.
 
 ## 1. Predict before running (2 minutes)
 

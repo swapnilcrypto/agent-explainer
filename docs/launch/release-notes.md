@@ -2,7 +2,7 @@
 
 See how AI agents work—and why they fail. Run a small experiment, inspect the failure, apply one repair, and replay the same situation.
 
-[Open the public beta](https://swapupg.github.io/agent-explainer/)
+[Open the public beta](https://modelfieldnotes.com/agent-explainer/)
 
 ## Included
 
